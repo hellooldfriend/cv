@@ -1,0 +1,57 @@
+@import './variables.scss';
+
+.cv_template {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 0;
+
+    h1, h3 {
+        margin-bottom: 0px;
+    }
+
+    &-row {
+        width: 100%;
+    }
+
+    &-two_columns {
+        width: 100%;
+        display: grid;
+
+
+        @media(min-width: $screen_md) {
+            grid-template-columns: repeat(2, 1fr);
+
+        }
+
+        .cv_template-block {
+            &:nth-child(1n) {
+                box-sizing: border-box;
+                padding-right: 1rem;
+            }
+        }
+    }
+
+    &-block {
+        width: 100%;
+    }
+
+    &-header {
+        margin-bottom: 1.5rem;
+
+        &-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+    }
+
+    &-links {
+
+    }
+
+    &-link {
+        display: inline-block;
+        text-decoration: none;
+        margin-right: 1rem;
+        margin-bottom: .5rem;
+    }
+}

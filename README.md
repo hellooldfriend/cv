@@ -1,0 +1,4 @@
+# Samat Zhetibaev
+
+## Frontend Developer
+
