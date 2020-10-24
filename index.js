@@ -1,4 +1,5 @@
 import CVTemplateDesign1 from './src/designs/design_one'
+import './index.scss'
 
 const options = {
 
