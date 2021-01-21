@@ -32,7 +32,7 @@ export default class CVTemplateDesign1 extends CVTemplate {
                     </main>
 
                     <footer>
-                        ©2021s
+                        ©2021
                     </footer>
 
                 </div>
