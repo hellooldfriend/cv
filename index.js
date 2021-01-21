@@ -71,7 +71,7 @@ const options = {
             'CSS',
             'SCSS / SASS',
             'JavaScript',
-            'React (before and after hooks)',
+            'React (classes and hooks)',
             'Git / Mercurial',
         ],
 
