@@ -86,8 +86,7 @@ const options = {
             'React Native',
             'Angular',
             'Django templates',
-            'Python',
-        ],
+s        ],
 
         other: [
             'GitLab',
