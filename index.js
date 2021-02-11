@@ -8,8 +8,13 @@ const options = {
             'I\'m the only one frontender on the project. The system works in English, Russian, Japanese and Korean. ' +
             'My job is to create new interfaces, support current interfaces, add new functionality, work with designer and backend developer, fix bugs if there are any, ' +
             'sometimes I do translations from Russian to English and vice versa, and support our static site, which is also made by me. ' +
-            'I prefer less libraries way of developing. ' +
-            '<br /><br /> <b>I do not make emails.</b>'
+            'I prefer less libraries way of developing. '
+            +
+            '<br /><p> ' +
+            'About booking system and examples of interfaces you can read <a href="https://tunneltech.eu/booking-system/" target="_blank">here</a>' +
+            '</p>'
+            +
+            '<b>I do not make emails</b>'
     },
 
     header: {
@@ -113,6 +118,10 @@ const options = {
     courses: [
 
     ],
+
+    work: [
+
+    ]
 
 }
 

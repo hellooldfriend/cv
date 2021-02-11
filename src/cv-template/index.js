@@ -3,6 +3,7 @@ import educationTemplate from '../templates/education'
 import experienceTemplate from '../templates/experience'
 import profileTemplate from '../templates/profile'
 import skillsTemplate from '../templates/skills'
+import workTemplate from '../templates/work'
 
 export default class CVTemplate {
     constructor(selector, options) {
@@ -14,6 +15,7 @@ export default class CVTemplate {
         this.education = educationTemplate(this.options.education)
         this.experience = experienceTemplate(this.options.experience)
         this.skills = skillsTemplate(this.options.skills)
+        this.work = workTemplate(this.options.work)
 
         this._render()
     }

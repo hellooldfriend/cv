@@ -18,6 +18,8 @@ export default class CVTemplateDesign1 extends CVTemplate {
                                 ${this.profile}
                                 
                                 ${this.experience}
+                                
+                                ${this.work}
     
                             </div>
                             

@@ -200,6 +200,20 @@ function skillsTemplate(data) {
 function formatTitle(title) {
   return title[0].toUpperCase() + title.slice(1);
 }
+},{}],"src/templates/work.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = workTemplate;
+
+function workTemplate(data) {
+  if (!data || !data.length) return '';
+  return "\n        <div class=\"cv_template-block\">\n            <h2>Work</h2>\n            <div>\n                ".concat(data.map(function (work) {
+    return "\n                        <div>\n                            <h3>".concat(work.title, "</h3>\n                            <p>").concat(work.description, "</p>\n                            <a href=\"").concat(work.url, "\">").concat(work.urlTitle, "</a>\n                        </div>\n                    ");
+  }), "\n            </div>\n        </div>\n    ");
+}
 },{}],"src/cv-template/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -217,6 +231,8 @@ var _experience = _interopRequireDefault(require("../templates/experience"));
 var _profile = _interopRequireDefault(require("../templates/profile"));
 
 var _skills = _interopRequireDefault(require("../templates/skills"));
+
+var _work = _interopRequireDefault(require("../templates/work"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -237,6 +253,7 @@ var CVTemplate = /*#__PURE__*/function () {
     this.education = (0, _education.default)(this.options.education);
     this.experience = (0, _experience.default)(this.options.experience);
     this.skills = (0, _skills.default)(this.options.skills);
+    this.work = (0, _work.default)(this.options.work);
 
     this._render();
   }
@@ -259,7 +276,7 @@ var CVTemplate = /*#__PURE__*/function () {
 }();
 
 exports.default = CVTemplate;
-},{"../templates/header":"src/templates/header.js","../templates/education":"src/templates/education.js","../templates/experience":"src/templates/experience.js","../templates/profile":"src/templates/profile.js","../templates/skills":"src/templates/skills.js"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"../templates/header":"src/templates/header.js","../templates/education":"src/templates/education.js","../templates/experience":"src/templates/experience.js","../templates/profile":"src/templates/profile.js","../templates/skills":"src/templates/skills.js","../templates/work":"src/templates/work.js"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -381,7 +398,7 @@ var CVTemplateDesign1 = /*#__PURE__*/function (_CVTemplate) {
   _createClass(CVTemplateDesign1, [{
     key: "_setup",
     value: function _setup() {
-      return "<div class=\"cv_template\">\n                <div class=\"content\">\n                    <header>\n                        <div class=\"cv_template-row\">\n                            ".concat(this.header, "\n                        </div>\n                    </header>\n                    \n                    <main>\n                        <div class=\"cv_template-row cv_template-two_columns\">\n                            <div>\n                                ").concat(this.profile, "\n                                \n                                ").concat(this.experience, "\n    \n                            </div>\n                            \n                            <div>\n                                ").concat(this.education, "\n                                \n                                ").concat(this.skills, "\n    \n                            </div>\n                        </div>\n                    \n                    </main>\n\n                    <footer>\n                        \xA92020\n                    </footer>\n\n                </div>\n            </div>");
+      return "<div class=\"cv_template\">\n                <div class=\"content\">\n                    <header>\n                        <div class=\"cv_template-row\">\n                            ".concat(this.header, "\n                        </div>\n                    </header>\n                    \n                    <main>\n                        <div class=\"cv_template-row cv_template-two_columns\">\n                            <div>\n                                ").concat(this.profile, "\n                                \n                                ").concat(this.experience, "\n                                \n                                ").concat(this.work, "\n    \n                            </div>\n                            \n                            <div>\n                                ").concat(this.education, "\n                                \n                                ").concat(this.skills, "\n    \n                            </div>\n                        </div>\n                    \n                    </main>\n\n                    <footer>\n                        \xA92021\n                    </footer>\n\n                </div>\n            </div>");
     }
   }]);
 
@@ -405,7 +422,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var options = {
   profile: {
-    description: 'At this moment I work with the booking system on the client, administrative, business owners\' parts. ' + 'I\'m the only one frontender on the project. The system works in English, Russian, Japanese and Korean. ' + 'My job is to create new interfaces, support current interfaces, add new functionality, work with designer and backend developer, fix bugs if there are any, ' + 'sometimes I do translations from Russian to English and vice versa, and support our static site, which is also made by me. ' + 'I prefer less libraries way of developing. ' + '<br /><br /> <b>I do not make emails.</b>'
+    description: 'At this moment I work with the booking system on the client, administrative, business owners\' parts. ' + 'I\'m the only one frontender on the project. The system works in English, Russian, Japanese and Korean. ' + 'My job is to create new interfaces, support current interfaces, add new functionality, work with designer and backend developer, fix bugs if there are any, ' + 'sometimes I do translations from Russian to English and vice versa, and support our static site, which is also made by me. ' + 'I prefer less libraries way of developing. ' + '<br /><p> ' + 'About booking system and examples of interfaces you can read <a href="https://tunneltech.eu/booking-system/" target="_blank">here</a>' + '</p>' + '<b>I do not make emails</b>'
   },
   header: {
     name: 'Samat Zhetibaev',
@@ -449,9 +466,9 @@ var options = {
     description: ''
   }],
   skills: {
-    experienced: ['HTML', 'CSS', 'SCSS / SASS', 'JavaScript', 'React (before and after hooks)', 'Git / Mercurial'],
+    experienced: ['HTML', 'CSS', 'SCSS / SASS', 'JavaScript', 'React (classes and hooks)', 'Git / Mercurial'],
     skillful: ['TypeScript', 'Redux', 'Webpack / Gulp / Parcel'],
-    basic: ['Jest / Puppeteer', 'React Native', 'Angular', 'Django templates', 'Python'],
+    basic: ['Jest / Puppeteer', 'React Native', 'Angular', 'Django templates'],
     other: ['GitLab', 'JIRA', 'Figma / Zeplin / Photoshop', 'Firebase', 'Storybook']
   },
   languages: [{
@@ -463,7 +480,8 @@ var options = {
     level: 'Native',
     description: null
   }],
-  courses: []
+  courses: [],
+  work: []
 };
 new _design_one.default('root', options);
 },{"./src/designs/design_one":"src/designs/design_one.js","./index.scss":"index.scss"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -494,7 +512,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63753" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61070" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
